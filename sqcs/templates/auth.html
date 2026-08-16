@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block title %}{{ 'Sign In' if mode=='login' else 'Create Account' }} · SQCS{% endblock %}
+{% block content %}
+<div class="auth-page"><div class="auth-brand"><img src="{{ url_for('static', filename='logo.png') }}"><div><b>SQCS Platform</b><span>Software Quality Compliance System</span></div></div>
+<div class="auth-card"><div class="eyebrow">{{ 'SECURE WORKSPACE' if mode=='login' else 'NEW USER' }}</div><h1>{{ 'Welcome back' if mode=='login' else 'Create your account' }}</h1><p class="muted">{{ 'Sign in to manage quality reviews, projects, checklists and evidence.' if mode=='login' else 'Join the quality workspace. Your account starts with standard access.' }}</p>
+<form method="post" class="form-grid one"><input type="hidden" name="_csrf" value="{{ csrf_token }}">
+{% if mode=='signup' %}<label>Full name<input name="name" required autocomplete="name"></label><label>Email<input type="email" name="email" required autocomplete="email"></label>{% endif %}
+<label>Username<input name="username" required autocomplete="username"></label><label>Password<input type="password" name="password" required minlength="8" autocomplete="{{ 'new-password' if mode=='signup' else 'current-password' }}"></label>
+<button class="btn btn-primary btn-xl" type="submit">{{ 'Sign in to workspace' if mode=='login' else 'Create account' }}</button></form>
+<div class="auth-foot">{% if mode=='login' %}Need access? <a href="{{ url_for('main.signup') }}">Create an account</a>{% else %}Already registered? <a href="{{ url_for('main.login') }}">Sign in</a>{% endif %}</div></div>
+<div class="auth-note">Built for structured software quality governance · PostgreSQL-ready · Vercel-ready</div></div>
+{% endblock %}

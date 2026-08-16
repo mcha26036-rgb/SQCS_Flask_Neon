@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}SQCS Platform{% endblock %}</title>
+  <meta name="description" content="Software Quality Compliance System — professional web-based quality management platform.">
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body class="app-shell">
+  {% if current_user %}
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><img src="{{ url_for('static', filename='logo.png') }}"><div><strong>SQCS</strong><span>Quality Platform</span></div></div>
+    <nav>
+      <a class="nav-link {% if request.endpoint=='main.dashboard' %}active{% endif %}" href="{{ url_for('main.dashboard') }}">▦ <span>Dashboard</span></a>
+      <a class="nav-link {% if request.endpoint in ['main.new_project','main.edit_project','main.project_detail','main.checklist','main.report'] %}active{% endif %}" href="{{ url_for('main.dashboard') }}#projects">◫ <span>Projects</span></a>
+      <a class="nav-link {% if request.endpoint in ['main.documents','main.document_upload'] %}active{% endif %}" href="{{ url_for('main.documents') }}">▤ <span>Documents</span></a>
+      {% if current_user.role=='admin' %}<a class="nav-link {% if request.endpoint=='main.admin' %}active{% endif %}" href="{{ url_for('main.admin') }}">⚙ <span>Administration</span></a>{% endif %}
+      <a class="nav-link {% if request.endpoint=='main.about' %}active{% endif %}" href="{{ url_for('main.about') }}">ⓘ <span>About & Help</span></a>
+    </nav>
+    <div class="sidebar-footer"><div class="status-dot"></div><div><span>System status</span><strong>Operational</strong></div></div>
+  </aside>
+  {% endif %}
+  <main class="main-area {% if not current_user %}public-area{% endif %}">
+    {% if current_user %}
+    <header class="topbar">
+      <button class="icon-btn mobile-only" type="button" onclick="toggleSidebar()">☰</button>
+      <div class="breadcrumbs">SQCS <span>/</span> {% block crumb %}Workspace{% endblock %}</div>
+      <div class="top-actions">
+        <a class="icon-btn" href="{{ url_for('main.about') }}" title="Help">?</a>
+        <div class="user-menu"><div class="avatar">{{ current_user.name[:1]|upper }}</div><div class="user-meta"><strong>{{ current_user.name }}</strong><span>{{ current_user.role|capitalize }}</span></div>
+          <form method="post" action="{{ url_for('main.logout') }}"><input type="hidden" name="_csrf" value="{{ csrf_token }}"><button class="link-btn" type="submit">Sign out</button></form>
+        </div>
+      </div>
+    </header>
+    {% endif %}
+    <section class="page-wrap">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}<div class="flash-stack">{% for cat,msg in messages %}<div class="flash {{ cat }}">{{ msg }}<button onclick="this.parentElement.remove()">×</button></div>{% endfor %}</div>{% endif %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+    </section>
+  </main>
+</body>
+</html>

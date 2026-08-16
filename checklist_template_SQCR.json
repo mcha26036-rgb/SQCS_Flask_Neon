@@ -1,0 +1,1827 @@
+{
+  "Requirement Gathering": {
+    "Introduction": [
+      {
+        "id": "REQ-Intro-1",
+        "description": "Purpose: Explain the purpose of the requirement gathering process, how this document will facilitate the collection and documentation of requirements, and its role in guiding the project."
+      },
+      {
+        "id": "REQ-Intro-2",
+        "description": "Scope: Define the scope of the requirement gathering process, including boundaries of what will be covered and what will not. Specify any constraints or limitations."
+      },
+      {
+        "id": "REQ-Intro-3",
+        "description": "Target Audience: Identify intended readers such as project managers, stakeholders, developers, and business analysts. Tailor the document to meet their needs."
+      },
+      {
+        "id": "REQ-Intro-4",
+        "description": "References: List any relevant documents, standards, or guidelines that are referenced in the requirement gathering process."
+      }
+    ],
+    "Requirement Gathering Process": [
+      {
+        "id": "REQ-Process-1",
+        "description": "Methodology: Describe the methodology used for gathering requirements, such as interviews, surveys, workshops, observations, or document analysis. Explain the rationale for choosing these methods."
+      },
+      {
+        "id": "REQ-Process-2",
+        "description": "Stakeholder Identification: Identify key stakeholders involved in the requirement gathering process. Include details on their roles, responsibilities, and how they will contribute to the requirements."
+      },
+      {
+        "id": "REQ-Process-3",
+        "description": "Data Collection Techniques: Outline the techniques and tools used to collect requirements, such as questionnaires, interview guides, or prototyping. Include any relevant templates or forms."
+      },
+      {
+        "id": "REQ-Process-4",
+        "description": "Schedule and Milestones: Provide a timeline for the requirement gathering process, including key milestones, deadlines, and deliverables. Define the phases of requirement collection and review."
+      }
+    ],
+    "Requirement Documentation": [
+      {
+        "id": "REQ-Doc-1",
+        "description": "Requirement Categories: Organize requirements into categories such as functional, non-functional, and technical. Define each category and its significance."
+      },
+      {
+        "id": "REQ-Doc-2",
+        "description": "Functional Requirements: Detail the specific functions and behaviors the system must exhibit. Include use cases, scenarios, and detailed descriptions."
+      },
+      {
+        "id": "REQ-Doc-3",
+        "description": "Non-Functional Requirements: Specify performance, security, usability, and other quality attributes. Include details on system performance, reliability, and user experience."
+      },
+      {
+        "id": "REQ-Doc-4",
+        "description": "Technical Requirements: Describe any technical constraints or needs, such as hardware, software, and integration requirements."
+      },
+      {
+        "id": "REQ-Doc-5",
+        "description": "Requirement Details: For each requirement, provide detailed information including Requirement ID (unique identifier), Description (clear and concise), Priority (high/medium/low with impact), Source (stakeholder or regulatory standard), and Acceptance Criteria (criteria for accepting as complete)."
+      }
+    ],
+    "Requirement Validation": [
+      {
+        "id": "REQ-Valid-1",
+        "description": "Validation Process: Describe the process for validating requirements to ensure they are accurate, complete, and aligned with stakeholder expectations. Include methods such as reviews, walkthroughs, or prototypes."
+      },
+      {
+        "id": "REQ-Valid-2",
+        "description": "Feedback Mechanisms: Outline how feedback will be collected from stakeholders and how it will be incorporated into the requirements. Define the process for handling changes and updates."
+      },
+      {
+        "id": "REQ-Valid-3",
+        "description": "Approval Process: Detail the process for obtaining formal approval of the requirements from stakeholders. Include any sign-off procedures and documentation."
+      }
+    ],
+    "Risk Management": [
+      {
+        "id": "REQ-Risk-1",
+        "description": "Risk Identification: Identify potential risks related to the requirements gathering process, such as incomplete requirements or conflicting stakeholder needs."
+      },
+      {
+        "id": "REQ-Risk-2",
+        "description": "Risk Assessment: Assess the impact and likelihood of each identified risk. Provide a risk management plan to mitigate and address these risks."
+      },
+      {
+        "id": "REQ-Risk-3",
+        "description": "Contingency Plans: Outline contingency plans for managing risks that may arise during the requirement gathering process."
+      }
+    ],
+    "Appendices": [
+      {
+        "id": "REQ-App-1",
+        "description": "Supporting Documentation: Include any additional documents, templates, or forms used during the requirement gathering process."
+      },
+      {
+        "id": "REQ-App-2",
+        "description": "Glossary: Define technical terms, acronyms, and jargon used in the document to ensure clarity and understanding."
+      }
+    ],
+    "Document Guidelines": [
+      {
+        "id": "REQ-Guidelines-1",
+        "description": "Clarity and Conciseness: Ensure the document is clear and concise, avoiding ambiguity and unnecessary complexity."
+      },
+      {
+        "id": "REQ-Guidelines-2",
+        "description": "Consistency: Use consistent terminology and formatting throughout the document to maintain professionalism and ease of understanding."
+      },
+      {
+        "id": "REQ-Guidelines-3",
+        "description": "Review and Approval: Ensure the document is reviewed and approved by relevant stakeholders before finalizing. This helps verify the accuracy and completeness of the requirements."
+      },
+      {
+        "id": "REQ-Guidelines-4",
+        "description": "Version Control: Maintain a version history of the document to track changes and updates. Ensure that the most current version is referenced and used."
+      }
+    ]
+  },
+
+  "SRS": {
+    "Introduction": [
+      {
+        "id": "SRS-Intro-1",
+        "description": "Overview of the Document's Purpose: Provide a summary of the SRS's role in guiding the development team and ensuring a shared understanding among stakeholders, highlighting its importance for the software lifecycle."
+      },
+      {
+        "id": "SRS-Intro-2",
+        "description": "Scope of the Software System: Define the project's boundaries, including what will be included and excluded (features, constraints, limitations) to manage expectations and prevent scope creep."
+      },
+      {
+        "id": "SRS-Intro-3",
+        "description": "References to Related Documents: List all external documents, standards (EAII standards), guidelines, legal requirements (PDPP), and technical documentation the SRS relies on."
+      },
+      {
+        "id": "SRS-Intro-4",
+        "description": "Target Audience: Specify the intended readers (developers, project managers, clients, end-users) and tailor the content to meet their needs."
+      }
+    ],
+    "Business Requirements": [
+      {
+        "id": "SRS-Bus-1",
+        "description": "Problem Statement: Articulate the business problems or challenges (e.g., manual processes, data fragmentation) that the DRRMS aims to address."
+      },
+      {
+        "id": "SRS-Bus-2",
+        "description": "Objectives: Outline the goals and expected benefits of the software, describing how it will improve processes, enhance efficiency, and achieve desired outcomes."
+      }
+    ],
+    "System Overview": [
+      {
+        "id": "SRS-Over-1",
+        "description": "High-Level Architecture: Provide a high-level view of the system's architecture, including major components and their interactions (using diagrams or textual descriptions)."
+      },
+      {
+        "id": "SRS-Over-2",
+        "description": "User Roles and Responsibilities: Define the different user roles (e.g., Administrator, Field Officer, Director) within the system, their responsibilities, and the functionalities they will access."
+      },
+      {
+        "id": "SRS-Over-3",
+        "description": "Relationships between Components: Explain how system components interact with each other and with external systems, detailing the flow of data and control."
+      }
+    ],
+    "Functional Requirements": [
+      {
+        "id": "SRS-Func-1",
+        "description": "Use Cases and Scenarios: Describe use cases and scenarios illustrating how users will interact with the system, including inputs, system responses, and event sequences."
+      },
+      {
+        "id": "SRS-Func-2",
+        "description": "Descriptions of Features: Provide detailed descriptions of each feature, specifying system behavior in response to user inputs or events, including inputs, outputs, and conditions."
+      },
+      {
+        "id": "SRS-Func-3",
+        "description": "Interactions between Users and the System: Detail the user interface and interaction flow, describing how users will engage with the system and the overall user experience."
+      }
+    ],
+    "Non-Functional Requirements": [
+      {
+        "id": "SRS-NonFunc-1",
+        "description": "Performance Requirements: Specify expected performance criteria such as response times, throughput, and resource utilization under different conditions and workloads."
+      },
+      {
+        "id": "SRS-NonFunc-2",
+        "description": "Reliability and Availability Specs: Outline requirements for system reliability and availability, including uptime, error recovery, and mechanisms for maintaining operations during failures."
+      },
+      {
+        "id": "SRS-NonFunc-3",
+        "description": "Security Measures and Requirements: Describe security features including access controls, encryption, authentication, and other measures to protect data and system functionality."
+      },
+      {
+        "id": "SRS-NonFunc-4",
+        "description": "Usability Considerations: Define requirements related to the UI and overall usability, including design principles, accessibility features, and ease-of-use factors."
+      }
+    ],
+    "System Constraints": [
+      {
+        "id": "SRS-Const-1",
+        "description": "Hardware Constraints: Specify limitations or requirements for the hardware environment, including minimum specifications, compatibility, and performance impacts."
+      },
+      {
+        "id": "SRS-Const-2",
+        "description": "Software Constraints: Describe limitations or requirements for the software environment, including OS compatibility, dependencies, and selection criteria for tools or frameworks."
+      },
+      {
+        "id": "SRS-Const-3",
+        "description": "Regulatory Compliance Requirements: Strictly adhere to the Personal Data Protection Proclamation No. 1321/2024 (Privacy by Design). This mandates conducting Data Protection Impact Assessments (DPIAs) for high-risk activities (Art. 47), implementing verifiable consent mechanisms (Art. 6), and ensuring personal data remains within national borders unless the destination country provides equivalent protections (cross-border transfer restrictions). Must align with industry-specific regulations and national digital standards."
+      }
+    ],
+    "Data Requirements": [
+      {
+        "id": "SRS-Data-1",
+        "description": "Data Entities and Attributes: Identify the data entities within the system and their attributes, providing a comprehensive overview of the types of data handled and their characteristics."
+      },
+      {
+        "id": "SRS-Data-2",
+        "description": "Relationships between Data Entities: Describe the relationships and associations between different data entities, explaining how data elements interact and are related."
+      },
+      {
+        "id": "SRS-Data-3",
+        "description": "Data Storage and Retrieval Requirements: Specify requirements for storage, retrieval, and processing, including database technologies, data formats, and mechanisms for maintaining integrity and security."
+      }
+    ],
+    "Document Guidelines": [
+      {
+        "id": "SRS-Doc-1",
+        "description": "Clarity and Conciseness: Ensure the document is clear and concise, avoiding unnecessary technical jargon to remain accessible to all readers."
+      },
+      {
+        "id": "SRS-Doc-2",
+        "description": "Consistency: Use consistent terminology and formatting throughout the document to maintain professionalism and aid comprehension."
+      },
+      {
+        "id": "SRS-Doc-3",
+        "description": "Visual Aids: Incorporate diagrams, charts, and tables to enhance understanding and illustrate complex concepts, making the document more engaging and interpretable."
+      },
+      {
+        "id": "SRS-Doc-4",
+        "description": "Review and Approval: Ensure the SRS is reviewed and approved by all relevant stakeholders, including legal and data privacy officers. Verify PDPP compliance (specifically cross-border data transfer restrictions) is accurately captured. This approval acts as a mandatory gateway before development begins."
+      },
+      {
+        "id": "SRS-Doc-5",
+        "description": "Version Control: Maintain a version history of the document to track changes and updates, ensuring the most current version is always used and referenced."
+      }
+    ]
+  },
+
+  "SAD": {
+    "Introduction": [
+      {
+        "id": "SAD-Intro-1",
+        "description": "Project Overview: Provide a brief summary of the project, including its goals, scope, and key deliverables. Helps readers understand the context and objectives of the software being developed."
+      },
+      {
+        "id": "SAD-Intro-2",
+        "description": "Document Purpose: Clearly articulate the purpose of the SAD. Explain why the document is being created and how it will be used throughout the development process."
+      },
+      {
+        "id": "SAD-Intro-3",
+        "description": "Document Scope: Define the scope of the analysis, specifying what aspects of the system are covered and any exclusions. Manage expectations and clarify the focus of the document."
+      },
+      {
+        "id": "SAD-Intro-4",
+        "description": "Target Audience: Identify primary readers such as developers, project managers, stakeholders, and end-users. Tailor content to meet the needs of these audiences."
+      },
+      {
+        "id": "SAD-Intro-5",
+        "description": "References: List relevant documents, standards, or guidelines referenced in the SAD, including industry standards, regulatory requirements (PDPP), or other technical documents that support the analysis."
+      }
+    ],
+    "System Overview": [
+      {
+        "id": "SAD-Over-1",
+        "description": "System Purpose: Describe the primary objective and intended outcome of the system. Explain why the system is being developed and what problems it aims to solve."
+      },
+      {
+        "id": "SAD-Over-2",
+        "description": "System Functions: Outline the core functions and features of the system. Provide a high-level view of what the system will do and how it will interact with users and other systems."
+      },
+      {
+        "id": "SAD-Over-3",
+        "description": "System Constraints: Identify any limitations or restrictions affecting the system, including technical constraints, resource limitations, or compliance requirements (e.g., PDPP Proclamation No. 1321/2024, cross-border data transfer restrictions)."
+      },
+      {
+        "id": "SAD-Over-4",
+        "description": "System Environment: Describe the environment in which the system will operate, including hardware, software, network configurations, and other environmental factors."
+      },
+      {
+        "id": "SAD-Over-5",
+        "description": "System Stakeholders: List and describe key stakeholders involved in the project, including individuals or groups who have an interest in the system's development and outcome."
+      }
+    ],
+    "Requirements Analysis": [
+      {
+        "id": "SAD-Req-1",
+        "description": "Functional Requirements: Provide a detailed description of the system's functionalities and behaviors, including specific actions the system must perform and how it will respond to user inputs and system events."
+      },
+      {
+        "id": "SAD-Req-2",
+        "description": "Non-Functional Requirements: Specify performance, security, usability, and other quality attributes. Define how well the system performs its functions, including response times, reliability, and user experience."
+      },
+      {
+        "id": "SAD-Req-3",
+        "description": "User Interface Requirements: Describe the characteristics and design of the user interface, including look and feel, usability considerations, and accessibility features."
+      },
+      {
+        "id": "SAD-Req-4",
+        "description": "Data Requirements: Define the data elements, structures, and relationships within the system, including data storage, retrieval, processing requirements, and data integrity and security considerations."
+      }
+    ],
+    "System Design": [
+      {
+        "id": "SAD-Design-1",
+        "description": "Architectural Design: Outline the overall architecture of the system, including major components and their interactions. Provide a blueprint for how the system will be structured and how components will work together."
+      },
+      {
+        "id": "SAD-Design-2",
+        "description": "Data Design: Specify the data models and database design, including details on how data will be organized, stored, and accessed within the system."
+      },
+      {
+        "id": "SAD-Design-3",
+        "description": "Interface Design: Define the interfaces between system components and external systems, including specifications for APIs, data exchange formats, and integration points."
+      },
+      {
+        "id": "SAD-Design-4",
+        "description": "Component Design: Detail the design of individual system components, including specific functionalities, interfaces, and interactions of each component within the system."
+      }
+    ],
+    "Analysis Results": [
+      {
+        "id": "SAD-Results-1",
+        "description": "Feasibility Study: Assess the project's technical, economic, and operational feasibility to evaluate if the project is viable given its constraints and requirements."
+      },
+      {
+        "id": "SAD-Results-2",
+        "description": "Risk Assessment: Identify potential risks and proposed mitigation strategies. For systems involving Machine Learning (ML), include specific AI Risk Assessments to identify potential algorithmic failures and biases."
+      },
+      {
+        "id": "SAD-Results-3",
+        "description": "Ethical AI Review: Conduct a formal analysis of the system's alignment with the National AI Policy. Evaluate the system for bias prevention, fairness, and transparency to ensure AI outcomes do not discriminate against specific groups or reflect historical prejudices."
+      },
+      {
+        "id": "SAD-Results-4",
+        "description": "Alternative Solutions: Explore different design options, technologies, or methodologies to achieve project goals."
+      },
+      {
+        "id": "SAD-Results-5",
+        "description": "Recommendations: Provide suggested actions or decisions based on the analysis results."
+      }
+    ],
+    "Appendices": [
+      {
+        "id": "SAD-App-1",
+        "description": "Supporting Documentation: Include any additional relevant information that supports the SAD, such as detailed diagrams, charts, tables, or supplementary documents."
+      },
+      {
+        "id": "SAD-App-2",
+        "description": "Glossary: Define technical terms and acronyms used in the document to ensure clarity and understanding for all readers, especially those who may not be familiar with specific terminology."
+      }
+    ],
+    "Document Guidelines": [
+      {
+        "id": "SAD-Guidelines-1",
+        "description": "Clarity and Conciseness: Use easily understandable language and avoid unnecessary technical jargon."
+      },
+      {
+        "id": "SAD-Guidelines-2",
+        "description": "Consistency: Maintain uniform terminology, formatting, and style throughout the artifact."
+      },
+      {
+        "id": "SAD-Guidelines-3",
+        "description": "Visual Aids: Incorporate diagrams and charts to clarify complex architectural or data concepts."
+      },
+      {
+        "id": "SAD-Guidelines-4",
+        "description": "Review and Approval: Ensure the SAD is reviewed and approved by all relevant stakeholders to verify requirement accuracy. For systems processing personal data or employing AI, mandatory review and approval must be sought from the Ethiopian Communications Authority or the designated Data Protection Authority. This ensures compliance with cross-border data transfer restrictions and national safety standards."
+      },
+      {
+        "id": "SAD-Guidelines-5",
+        "description": "Version Control: Maintain a detailed record of revisions and updates to ensure the most current version is utilized by the development team."
+      }
+    ]
+  },
+
+  "Coding Standards": {
+    "Code Readability": [
+      {
+        "id": "COD-Read-1",
+        "description": "Write as few lines as possible"
+      },
+      {
+        "id": "COD-Read-2",
+        "description": "Use appropriate naming conventions"
+      },
+      {
+        "id": "COD-Read-3",
+        "description": "Segment code into blocks"
+      },
+      {
+        "id": "COD-Read-4",
+        "description": "Use indentation for control structures"
+      },
+      {
+        "id": "COD-Read-5",
+        "description": "Avoid long functions"
+      },
+      {
+        "id": "COD-Read-6",
+        "description": "Use DRY (Don't Repeat Yourself)"
+      },
+      {
+        "id": "COD-Read-7",
+        "description": "Limit deep nesting"
+      },
+      {
+        "id": "COD-Read-8",
+        "description": "Capitalize SQL keywords"
+      },
+      {
+        "id": "COD-Read-9",
+        "description": "Avoid long lines"
+      }
+    ],
+    "Standardize Headers": [
+      {
+        "id": "COD-Head-1",
+        "description": "Module Name"
+      },
+      {
+        "id": "COD-Head-2",
+        "description": "Date of Creation"
+      },
+      {
+        "id": "COD-Head-3",
+        "description": "The creator's name of the module"
+      },
+      {
+        "id": "COD-Head-4",
+        "description": "History of creation"
+      },
+      {
+        "id": "COD-Head-5",
+        "description": "Summary of what the module does"
+      }
+    ],
+    "Handle Name Conflict": [
+      {
+        "id": "COD-Conf-1",
+        "description": "Avoid Reusing Identifiers"
+      },
+      {
+        "id": "COD-Conf-2",
+        "description": "Assign Descriptive Names"
+      },
+      {
+        "id": "COD-Conf-3",
+        "description": "Refactor Code if Necessary"
+      },
+      {
+        "id": "COD-Conf-4",
+        "description": "Writing Variable and Function Purposes"
+      }
+    ],
+    "Daily Backups": [
+      {
+        "id": "COD-Back-1",
+        "description": "Back up the workflow on TFS"
+      },
+      {
+        "id": "COD-Back-2",
+        "description": "Follows a centralized model and is well-established"
+      },
+      {
+        "id": "COD-Back-3",
+        "description": "Using Source Code Management (SCM) systems"
+      }
+    ],
+    "Commenting": [
+      {
+        "id": "COD-Comm-1",
+        "description": "Ensure code is adequately commented"
+      },
+      {
+        "id": "COD-Comm-2",
+        "description": "Comments are clear and concise"
+      },
+      {
+        "id": "COD-Comm-3",
+        "description": "Comments are placed strategically"
+      },
+      {
+        "id": "COD-Comm-4",
+        "description": "Comments follow a consistent style"
+      },
+      {
+        "id": "COD-Comm-5",
+        "description": "Comments accurately reflect the current state"
+      }
+    ],
+    "Exception Handling": [
+      {
+        "id": "COD-Exc-1",
+        "description": "Use specific exception types"
+      },
+      {
+        "id": "COD-Exc-2",
+        "description": "Implement try-catch blocks"
+      },
+      {
+        "id": "COD-Exc-3",
+        "description": "Include descriptive error messages"
+      },
+      {
+        "id": "COD-Exc-4",
+        "description": "Log exception details"
+      }
+    ],
+    "Importing Code": [
+      {
+        "id": "COD-Imp-1",
+        "description": "Adherence to Language-Specific Style Guides"
+      },
+      {
+        "id": "COD-Imp-2",
+        "description": "Organizing Imports for Clarity"
+      },
+      {
+        "id": "COD-Imp-3",
+        "description": "Avoiding Namespace Pollution"
+      },
+      {
+        "id": "COD-Imp-4",
+        "description": "Ensuring Clear Pathways for Code Traceability"
+      },
+      {
+        "id": "COD-Imp-5",
+        "description": "Shorter for Brevity and Clarity"
+      }
+    ],
+    "Security Findings": [
+      {
+        "id": "COD-Sec-1",
+        "description": "Hardcoded secrets"
+      },
+      {
+        "id": "COD-Sec-2",
+        "description": "PII encryption"
+      },
+      {
+        "id": "COD-Sec-3",
+        "description": "Data masking/tokenization"
+      },
+      {
+        "id": "COD-Sec-4",
+        "description": "Error handling leakage"
+      },
+      {
+        "id": "COD-Sec-5",
+        "description": "Rate limiting"
+      },
+      {
+        "id": "COD-Sec-6",
+        "description": "Supply chain security"
+      }
+    ]
+  },
+
+  "UI_UX Design": {
+    "Readability": [
+      {
+        "id": "UI-Read-1",
+        "description": "Use consistent fonts colors and element styles"
+      },
+      {
+        "id": "UI-Read-2",
+        "description": "Ensure UI elements behave consistently"
+      },
+      {
+        "id": "UI-Read-3",
+        "description": "Maintain uniformity in button appearance"
+      },
+      {
+        "id": "UI-Read-4",
+        "description": "Ensure consistency in color and typography"
+      }
+    ],
+    "Usability": [
+      {
+        "id": "UI-Usab-1",
+        "description": "Use clear and concise messages"
+      },
+      {
+        "id": "UI-Usab-2",
+        "description": "Provide helpful feedback"
+      },
+      {
+        "id": "UI-Usab-3",
+        "description": "Avoid unnecessary complexity"
+      }
+    ],
+    "Accessibility": [
+      {
+        "id": "UI-Acc-1",
+        "description": "Follow accessibility guidelines"
+      },
+      {
+        "id": "UI-Acc-2",
+        "description": "Provide text alternatives for non-text content"
+      },
+      {
+        "id": "UI-Acc-3",
+        "description": "Use high-contrast colors"
+      },
+      {
+        "id": "UI-Acc-4",
+        "description": "Use appropriate font sizes"
+      },
+      {
+        "id": "UI-Acc-5",
+        "description": "Use a consistent font family"
+      },
+      {
+        "id": "UI-Acc-6",
+        "description": "Use a consistent color palette"
+      },
+      {
+        "id": "UI-Acc-7",
+        "description": "Correctly handle status like hover, focus, active"
+      },
+      {
+        "id": "UI-Acc-8",
+        "description": "Understand color psychology"
+      }
+    ],
+    "Responsive Design": [
+      {
+        "id": "UI-Resp-1",
+        "description": "Enforce responsive design methodologies"
+      },
+      {
+        "id": "UI-Resp-2",
+        "description": "Implement a simple and navigable menu"
+      },
+      {
+        "id": "UI-Resp-3",
+        "description": "Provide ways to help users navigate"
+      },
+      {
+        "id": "UI-Resp-4",
+        "description": "Design clear navigation menus"
+      },
+      {
+        "id": "UI-Resp-5",
+        "description": "Ensure purpose of each link is clear"
+      },
+      {
+        "id": "UI-Resp-6",
+        "description": "Ensure buttons are clearly visible"
+      }
+    ],
+    "Error Handling": [
+      {
+        "id": "UI-Err-1",
+        "description": "Provide informative feedback"
+      },
+      {
+        "id": "UI-Err-2",
+        "description": "Error Warning Information Success"
+      },
+      {
+        "id": "UI-Err-3",
+        "description": "Handle errors gracefully"
+      },
+      {
+        "id": "UI-Err-4",
+        "description": "Describe input errors in text"
+      },
+      {
+        "id": "UI-Err-5",
+        "description": "Provide labels or instructions"
+      },
+      {
+        "id": "UI-Err-6",
+        "description": "Provide suggestions for correction"
+      },
+      {
+        "id": "UI-Err-7",
+        "description": "Give users opportunity to make changes"
+      }
+    ],
+    "Visual Design and Performance": [
+      {
+        "id": "UI-Vis-1",
+        "description": "Integrate internationalization features"
+      },
+      {
+        "id": "UI-Vis-2",
+        "description": "Maintain visual consistency"
+      },
+      {
+        "id": "UI-Vis-3",
+        "description": "Prioritize performance optimization"
+      },
+      {
+        "id": "UI-Vis-4",
+        "description": "Choose the right file format for images"
+      },
+      {
+        "id": "UI-Vis-5",
+        "description": "Resize images for responsive design"
+      },
+      {
+        "id": "UI-Vis-6",
+        "description": "Enable browser caching"
+      },
+      {
+        "id": "UI-Vis-7",
+        "description": "Implement lazy loading for images"
+      },
+      {
+        "id": "UI-Vis-8",
+        "description": "Organize content with clear hierarchy"
+      },
+      {
+        "id": "UI-Vis-9",
+        "description": "Base design on user research"
+      },
+      {
+        "id": "UI-Vis-10",
+        "description": "Implement robust security measures"
+      }
+    ],
+    "Mobile Applications UI": [
+      {
+        "id": "UI-Mob-1",
+        "description": "Simple and Intuitive UX flows"
+      },
+      {
+        "id": "UI-Mob-2",
+        "description": "Complete tasks with minimal effort"
+      },
+      {
+        "id": "UI-Mob-3",
+        "description": "Simplicity in interface design"
+      },
+      {
+        "id": "UI-Mob-4",
+        "description": "Use visual cues and clear elements"
+      },
+      {
+        "id": "UI-Mob-5",
+        "description": "Incorporate icons, buttons, and indicators"
+      },
+      {
+        "id": "UI-Mob-6",
+        "description": "Reduce steps or clicks required"
+      },
+      {
+        "id": "UI-Mob-7",
+        "description": "Ensure quick access to functionalities"
+      },
+      {
+        "id": "UI-Mob-8",
+        "description": "Adapt to various screen sizes"
+      },
+      {
+        "id": "UI-Mob-9",
+        "description": "Maintain consistent look across devices"
+      }
+    ]
+  },
+
+  "UI_UX Evalution": {
+    "Accessibility Core": [
+      {
+        "id": "A01",
+        "description": "Check all text contrast and background combinations"
+      },
+      {
+        "id": "A02",
+        "description": "Check that all form inputs, selects, and textareas have labels"
+      },
+      {
+        "id": "A03",
+        "description": "Check for empty buttons and links"
+      },
+      {
+        "id": "A04",
+        "description": "Check ARIA usage"
+      },
+      {
+        "id": "A05",
+        "description": "Check for proper heading levels"
+      },
+      {
+        "id": "A06",
+        "description": "Check for redundant or missing titles"
+      },
+      {
+        "id": "A07",
+        "description": "Check alt text"
+      }
+    ],
+    "Performance & Speed": [
+      {
+        "id": "P01",
+        "description": "Measure overall performance score using Lighthouse"
+      },
+      {
+        "id": "P02",
+        "description": "Measure using Lighthouse or WebPageTest"
+      },
+      {
+        "id": "P03",
+        "description": "Measure Largest Contentful Paint (LCP) using Lighthouse"
+      },
+      {
+        "id": "P04",
+        "description": "Measure Cumulative Layout Shift (CLS) using Lighthouse"
+      },
+      {
+        "id": "P05",
+        "description": "Measure Total Blocking Time (TBT) using Lighthouse"
+      },
+      {
+        "id": "P06",
+        "description": "Measure Time to Interactive (TTI) using Lighthouse"
+      },
+      {
+        "id": "P07",
+        "description": "Check for viewport meta tag"
+      }
+    ],
+    "Responsive Design Checklist": [
+      {
+        "id": "R01",
+        "description": "Test layout on mobile, tablet, desktop"
+      },
+      {
+        "id": "R02",
+        "description": "Check for horizontal scroll"
+      },
+      {
+        "id": "R03",
+        "description": "Check interactive elements touch target size"
+      },
+      {
+        "id": "R04",
+        "description": "Check base font size"
+      },
+      {
+        "id": "R05",
+        "description": "Ensure images scale properly"
+      },
+      {
+        "id": "R06",
+        "description": "Check breakpoints coverage"
+      },
+      {
+        "id": "R07",
+        "description": "Check essential content visibility on small screens"
+      }
+    ]
+  },
+
+  "Database Standards": {
+    "Table & Column Documentation": [
+      {
+        "id": "DB-TblDoc-1",
+        "description": "Table descriptions"
+      },
+      {
+        "id": "DB-TblDoc-2",
+        "description": "Column descriptions"
+      },
+      {
+        "id": "DB-TblDoc-3",
+        "description": "Enum documentation"
+      },
+      {
+        "id": "DB-TblDoc-4",
+        "description": "Relationship documentation"
+      },
+      {
+        "id": "DB-TblDoc-5",
+        "description": "Index purpose documentation"
+      }
+    ],
+    "Version Control & Migration Management": [
+      {
+        "id": "DB-Vers-1",
+        "description": "Schema version tracking"
+      },
+      {
+        "id": "DB-Vers-2",
+        "description": "Migration naming convention"
+      },
+      {
+        "id": "DB-Vers-3",
+        "description": "Rollback strategy"
+      },
+      {
+        "id": "DB-Vers-4",
+        "description": "DDL change audit"
+      },
+      {
+        "id": "DB-Vers-5",
+        "description": "Migration validation"
+      }
+    ],
+    "Access Control & Security": [
+      {
+        "id": "DB-Access-1",
+        "description": "User roles defined"
+      },
+      {
+        "id": "DB-Access-2",
+        "description": "Least privilege principle"
+      },
+      {
+        "id": "DB-Access-3",
+        "description": "PII encryption specification"
+      },
+      {
+        "id": "DB-Access-4",
+        "description": "Data masking / tokenization"
+      },
+      {
+        "id": "DB-Access-5",
+        "description": "Row-Level Security (RLS)"
+      },
+      {
+        "id": "DB-Access-6",
+        "description": "Audit trails"
+      },
+      {
+        "id": "DB-Access-7",
+        "description": "Data residency tags"
+      },
+      {
+        "id": "DB-Access-8",
+        "description": "Pseudonymization (PDPP)"
+      }
+    ],
+    "Backup & Recovery Procedures": [
+      {
+        "id": "DB-Backup-1",
+        "description": "Backup schedule documentation"
+      },
+      {
+        "id": "DB-Backup-2",
+        "description": "Point-in-Time Recovery (PITR)"
+      },
+      {
+        "id": "DB-Backup-3",
+        "description": "Backup verification mechanism"
+      },
+      {
+        "id": "DB-Backup-4",
+        "description": "Recovery procedure documentation"
+      },
+      {
+        "id": "DB-Backup-5",
+        "description": "Offsite backup storage"
+      }
+    ],
+    "Commenting & Documentation": [
+      {
+        "id": "DB-Comm-1",
+        "description": "Model-level comments"
+      },
+      {
+        "id": "DB-Comm-2",
+        "description": "Field-level comments"
+      },
+      {
+        "id": "DB-Comm-3",
+        "description": "Business rule documentation"
+      },
+      {
+        "id": "DB-Comm-4",
+        "description": "Compliance annotations"
+      },
+      {
+        "id": "DB-Comm-5",
+        "description": "Update history in schema"
+      }
+    ],
+    "Relationship Integrity": [
+      {
+        "id": "DB-Rel-1",
+        "description": "Foreign keys properly defined"
+      },
+      {
+        "id": "DB-Rel-2",
+        "description": "Cascade behaviors specified"
+      },
+      {
+        "id": "DB-Rel-3",
+        "description": "Unique constraints on junctions"
+      },
+      {
+        "id": "DB-Rel-4",
+        "description": "Relationship cardinality documented"
+      },
+      {
+        "id": "DB-Rel-5",
+        "description": "Orphan record prevention"
+      }
+    ],
+    "AI-Relevant Data Handling": [
+      {
+        "id": "DB-AI-1",
+        "description": "Data provenance tracking"
+      },
+      {
+        "id": "DB-AI-2",
+        "description": "Right to Erasure support"
+      },
+      {
+        "id": "DB-AI-3",
+        "description": "Partitioning strategy"
+      },
+      {
+        "id": "DB-AI-4",
+        "description": "Sharding strategy"
+      },
+      {
+        "id": "DB-AI-5",
+        "description": "Anonymized training views"
+      },
+      {
+        "id": "DB-AI-6",
+        "description": "Training dataset registry"
+      }
+    ],
+    "Compliance & Regulatory": [
+      {
+        "id": "DB-Cmp-1",
+        "description": "PDPP compliance indicators"
+      },
+      {
+        "id": "DB-Cmp-2",
+        "description": "Data retention policies"
+      },
+      {
+        "id": "DB-Cmp-3",
+        "description": "Data classification"
+      },
+      {
+        "id": "DB-Cmp-4",
+        "description": "Audit logging completeness"
+      },
+      {
+        "id": "DB-Cmp-5",
+        "description": "Compliance metadata table"
+      }
+    ],
+    "Naming Conventions & Structure": [
+      {
+        "id": "DB-Name-1",
+        "description": "Consistent table naming"
+      },
+      {
+        "id": "DB-Name-2",
+        "description": "Meaningful field names"
+      },
+      {
+        "id": "DB-Name-3",
+        "description": "Foreign key naming"
+      },
+      {
+        "id": "DB-Name-4",
+        "description": "Enum naming"
+      },
+      {
+        "id": "DB-Name-5",
+        "description": "Index naming"
+      }
+    ],
+    "Performance & Scalability": [
+      {
+        "id": "DB-Perf-1",
+        "description": "Appropriate indexes"
+      },
+      {
+        "id": "DB-Perf-2",
+        "description": "Composite indexes"
+      },
+      {
+        "id": "DB-Perf-3",
+        "description": "Avoidance of N+1 queries"
+      },
+      {
+        "id": "DB-Perf-4",
+        "description": "Partitioning for large tables"
+      },
+      {
+        "id": "DB-Perf-5",
+        "description": "Archival strategy"
+      }
+    ]
+  },
+
+  "DevOps Standards": {
+    "Standards": [
+      {
+        "id": "DO-Std-1",
+        "description": "Version control system set up (e.g., Git)"
+      },
+      {
+        "id": "DO-Std-2",
+        "description": "CI pipeline configured and operational"
+      },
+      {
+        "id": "DO-Std-3",
+        "description": "Automated testing integrated into CI/CD pipeline"
+      },
+      {
+        "id": "DO-Std-4",
+        "description": "Infrastructure as Code (IaC) scripts in use"
+      },
+      {
+        "id": "DO-Std-5",
+        "description": "Monitoring tools implemented and metrics tracked"
+      },
+      {
+        "id": "DO-Std-6",
+        "description": "Secrets securely managed (e.g., using vaults)"
+      },
+      {
+        "id": "DO-Std-7",
+        "description": "Backup and recovery processes tested"
+      },
+      {
+        "id": "DO-Std-8",
+        "description": "Deployment strategy includes rollback mechanisms"
+      },
+      {
+        "id": "DO-Std-9",
+        "description": "Role-based access control (RBAC) implemented"
+      },
+      {
+        "id": "NEW10",
+        "description": "Add description here"
+      },
+      {
+        "id": "NEW11",
+        "description": "Add description here fasil"
+      },
+      {
+        "id": "NEW12",
+        "description": "Add description here"
+      }
+    ]
+  },
+  "Mobile Security Standards": {
+    "Certificate & Release Signing": [
+      {
+        "id": "MOB-Cert-1",
+        "description": "Sign release builds with a dedicated release keystore (never a debug certificate)"
+      },
+      {
+        "id": "MOB-Cert-2",
+        "description": "Store signing keys in a secrets manager or HSM, not in source control or CI logs"
+      },
+      {
+        "id": "MOB-Cert-3",
+        "description": "Gate CI/CD pipeline to block release artifacts signed with a debug certificate"
+      }
+    ],
+    "Manifest & Component Security": [
+      {
+        "id": "MOB-Man-1",
+        "description": "Explicitly set android:allowBackup (disable or scope with extraction rules)"
+      },
+      {
+        "id": "MOB-Man-2",
+        "description": "Set minSdkVersion to a platform version still receiving security updates"
+      },
+      {
+        "id": "MOB-Man-3",
+        "description": "Do not export activities, services, receivers, or providers unless required"
+      },
+      {
+        "id": "MOB-Man-4",
+        "description": "Protect exported components with an app-defined signature-level permission"
+      }
+    ],
+    "Data Storage & Privacy": [
+      {
+        "id": "MOB-Store-1",
+        "description": "Never write sensitive data to application logs"
+      },
+      {
+        "id": "MOB-Store-2",
+        "description": "Avoid storing sensitive data on shared/external storage"
+      },
+      {
+        "id": "MOB-Store-3",
+        "description": "Do not copy sensitive data to the system clipboard"
+      },
+      {
+        "id": "MOB-Store-4",
+        "description": "Encrypt or avoid writing sensitive data to temporary files"
+      },
+      {
+        "id": "MOB-Store-5",
+        "description": "Encrypt sensitive fields before persisting to local databases"
+      },
+      {
+        "id": "MOB-Store-6",
+        "description": "Use parameterized queries; never build SQL from raw string concatenation"
+      }
+    ],
+    "Cryptography": [
+      {
+        "id": "MOB-Crypto-1",
+        "description": "Avoid deprecated/weak hash algorithms (e.g., SHA-1, MD5); use SHA-256 or stronger"
+      },
+      {
+        "id": "MOB-Crypto-2",
+        "description": "Use a cryptographically secure random number generator (e.g., SecureRandom) for security-sensitive values"
+      },
+      {
+        "id": "MOB-Crypto-3",
+        "description": "Never hardcode secrets, API keys, or credentials in source or native binaries"
+      }
+    ],
+    "Native Library & Binary Hardening": [
+      {
+        "id": "MOB-Bin-1",
+        "description": "Compile native libraries with stack canary, NX, and PIE protections"
+      },
+      {
+        "id": "MOB-Bin-2",
+        "description": "Enable FORTIFY_SOURCE and RELRO for native (non-Dart/Flutter) libraries where supported"
+      },
+      {
+        "id": "MOB-Bin-3",
+        "description": "Document and justify any anti-VM/anti-emulator (Build.*) fingerprinting logic"
+      }
+    ],
+    "Permissions & Malware Patterns": [
+      {
+        "id": "MOB-Perm-1",
+        "description": "Request only the minimum permissions required for a documented feature"
+      },
+      {
+        "id": "MOB-Perm-2",
+        "description": "Individually justify any permission matching known malware-abused patterns"
+      },
+      {
+        "id": "MOB-Perm-3",
+        "description": "Scope SMS/CALL_LOG-adjacent or other sensitive content-URI access to the minimum required"
+      }
+    ]
+  },
+  "Software Testing": {
+    "Unit Testing": [
+      {
+        "id": "TEST-Unit-1",
+        "description": "Common Functionality Test",
+        "input": "Valid Input",
+        "expected": "Expected valid Output"
+      },
+      {
+        "id": "TEST-Unit-2",
+        "description": "Invalid Input Handling",
+        "input": "Invalid Input",
+        "expected": "Appropriate Error Handling"
+      },
+      {
+        "id": "TEST-Unit-3",
+        "description": "Error Handling Test",
+        "input": "Error Condition",
+        "expected": "Expected Error Message"
+      },
+      {
+        "id": "TEST-Unit-4",
+        "description": "Boundary Testing",
+        "input": "Min/Max Valid Input",
+        "expected": "Correct Behavior at Limits"
+      },
+      {
+        "id": "TEST-Unit-5",
+        "description": "Null Input Handling",
+        "input": "Null or Empty Input",
+        "expected": "Appropriate Response"
+      },
+      {
+        "id": "TEST-Unit-6",
+        "description": "Exception Handling",
+        "input": "Unexpected Exceptions",
+        "expected": "Graceful Error Handling"
+      }
+    ],
+    "Integration Testing": [
+      {
+        "id": "TEST-Int-1",
+        "description": "Module A and B Interaction",
+        "input": "Inputs from Module A and B",
+        "expected": "Expected Integrated Output"
+      },
+      {
+        "id": "TEST-Int-2",
+        "description": "Database Integration",
+        "input": "Interaction with Database",
+        "expected": "Data Retrieval and Storage"
+      },
+      {
+        "id": "TEST-Int-3",
+        "description": "API Integration",
+        "input": "Interaction with External API",
+        "expected": "Expected API Response"
+      },
+      {
+        "id": "TEST-Int-4",
+        "description": "Service Integration",
+        "input": "Communication with External Service",
+        "expected": "Service Functionality"
+      },
+      {
+        "id": "TEST-Int-5",
+        "description": "Workflow Integration",
+        "input": "Combined Workflow",
+        "expected": "Correct Execution of Workflow"
+      },
+      {
+        "id": "TEST-Int-6",
+        "description": "User Interface Integration",
+        "input": "UI Components Interaction",
+        "expected": "Proper Display and Interaction"
+      }
+    ],
+    "Database Testing": [
+      {
+        "id": "TEST-DB-1",
+        "description": "Data Integrity Test",
+        "input": "Insert/update data",
+        "expected": "Data integrity is maintained"
+      },
+      {
+        "id": "TEST-DB-2",
+        "description": "Data Retrieval Test",
+        "input": "Execute queries",
+        "expected": "Accurate retrieval of expected data"
+      },
+      {
+        "id": "TEST-DB-3",
+        "description": "Transaction Management Test",
+        "input": "Test database transactions",
+        "expected": "Proper commit and rollback"
+      },
+      {
+        "id": "TEST-DB-4",
+        "description": "Indexing and Query Optimization Test",
+        "input": "Check indexing",
+        "expected": "Efficient data retrieval"
+      },
+      {
+        "id": "TEST-DB-5",
+        "description": "Backup and Recovery Test",
+        "input": "Test backup procedures",
+        "expected": "Successful backup and recovery"
+      },
+      {
+        "id": "TEST-DB-6",
+        "description": "Security and Access Control Test",
+        "input": "Verify security measures",
+        "expected": "Proper access control"
+      }
+    ],
+    "UI Testing": [
+      {
+        "id": "TEST-UI-1",
+        "description": "Layout Consistency Test",
+        "input": "Review UI Elements",
+        "expected": "Consistency Across Screens"
+      },
+      {
+        "id": "TEST-UI-2",
+        "description": "Color and Font Check",
+        "input": "Verify Colors and Fonts",
+        "expected": "Adherence to Design Standards"
+      },
+      {
+        "id": "TEST-UI-3",
+        "description": "Navigation Flow Test",
+        "input": "Test Navigation",
+        "expected": "Smooth and Intuitive Navigation"
+      },
+      {
+        "id": "TEST-UI-4",
+        "description": "Button and Link Functionality Test",
+        "input": "Click Buttons and Links",
+        "expected": "Expected Actions"
+      },
+      {
+        "id": "TEST-UI-5",
+        "description": "Input Field Validation",
+        "input": "Enter Valid/Invalid Data",
+        "expected": "Appropriate Validation"
+      },
+      {
+        "id": "TEST-UI-6",
+        "description": "Image and Multimedia Check",
+        "input": "Verify Display",
+        "expected": "Proper Rendering"
+      },
+      {
+        "id": "TEST-UI-7",
+        "description": "Error Message Display Test",
+        "input": "Trigger Errors",
+        "expected": "Clear Error Messages"
+      }
+    ],
+    "UX Testing": [
+      {
+        "id": "TEST-UX-1",
+        "description": "Navigation Flow Test",
+        "input": "Interact with System",
+        "expected": "Smooth Navigation"
+      },
+      {
+        "id": "TEST-UX-2",
+        "description": "User Onboarding Experience Test",
+        "input": "Evaluate Onboarding",
+        "expected": "Clear Instructions"
+      },
+      {
+        "id": "TEST-UX-3",
+        "description": "Task Completion Test",
+        "input": "Complete Tasks",
+        "expected": "Efficient Completion"
+      },
+      {
+        "id": "TEST-UX-4",
+        "description": "Accessibility Test",
+        "input": "Verify Accessibility",
+        "expected": "Compliance with Standards"
+      },
+      {
+        "id": "TEST-UX-5",
+        "description": "Feedback Mechanism Test",
+        "input": "Provide Feedback",
+        "expected": "Effective Mechanism"
+      },
+      {
+        "id": "TEST-UX-6",
+        "description": "Error Recovery Test",
+        "input": "Recover from Errors",
+        "expected": "Smooth Recovery"
+      }
+    ],
+    "Manual Security Testing": [
+      {
+        "id": "TEST-SecM-1",
+        "description": "Valid User Login",
+        "input": "Correct Username and Password",
+        "expected": "Successful authentication"
+      },
+      {
+        "id": "TEST-SecM-2",
+        "description": "Invalid User Login",
+        "input": "Incorrect Username or Password",
+        "expected": "Authentication failure"
+      },
+      {
+        "id": "TEST-SecM-3",
+        "description": "Account Lockout Test",
+        "input": "Repeated Incorrect Attempts",
+        "expected": "Account locked"
+      },
+      {
+        "id": "TEST-SecM-4",
+        "description": "Access to Unauthorized Resource",
+        "input": "Attempt without permissions",
+        "expected": "Access denied"
+      },
+      {
+        "id": "TEST-SecM-5",
+        "description": "Role-Based Access Control Test",
+        "input": "Different roles access",
+        "expected": "Restricted access"
+      },
+      {
+        "id": "TEST-SecM-6",
+        "description": "Insecure Direct Object References Test",
+        "input": "Direct access attempt",
+        "expected": "Unauthorized access prevented"
+      },
+      {
+        "id": "TEST-SecM-7",
+        "description": "Session Timeout Test",
+        "input": "Extend session",
+        "expected": "User logged out"
+      },
+      {
+        "id": "TEST-SecM-8",
+        "description": "Session Fixation Test",
+        "input": "Fixate session",
+        "expected": "New session generated"
+      }
+    ],
+    "Responsive Testing": [
+      {
+        "id": "TEST-Resp-1",
+        "description": "Desktop View",
+        "input": "Access from desktop",
+        "expected": "Optimized for desktop"
+      },
+      {
+        "id": "TEST-Resp-2",
+        "description": "Tablet View",
+        "input": "Access from tablet",
+        "expected": "Optimized for tablet"
+      },
+      {
+        "id": "TEST-Resp-3",
+        "description": "Mobile View",
+        "input": "Access from mobile",
+        "expected": "Optimized for mobile"
+      },
+      {
+        "id": "TEST-Resp-4",
+        "description": "Viewport Adjustment Test",
+        "input": "Resize window",
+        "expected": "UI adapts"
+      },
+      {
+        "id": "TEST-Resp-5",
+        "description": "Cross-Browser Compatibility",
+        "input": "Various browsers",
+        "expected": "Consistent experience"
+      },
+      {
+        "id": "TEST-Resp-6",
+        "description": "Device Orientation Test",
+        "input": "Rotate device",
+        "expected": "UI adjusts"
+      }
+    ],
+    "Page Performance Testing": [
+      {
+        "id": "TEST-PerfP-1",
+        "description": "Performance Score",
+        "input": "Run evaluation",
+        "expected": "High performance rating"
+      },
+      {
+        "id": "TEST-PerfP-2",
+        "description": "Accessibility Score",
+        "input": "Evaluate accessibility",
+        "expected": "High usability score"
+      },
+      {
+        "id": "TEST-PerfP-3",
+        "description": "Best Practices Score",
+        "input": "Check standards",
+        "expected": "High compliance score"
+      },
+      {
+        "id": "TEST-PerfP-4",
+        "description": "SEO Score",
+        "input": "Analyze SEO",
+        "expected": "High SEO score"
+      }
+    ],
+    "System Performance Testing": [
+      {
+        "id": "TEST-PerfS-1",
+        "description": "Concurrency Testing",
+        "input": "Multiple user actions",
+        "expected": "Efficient handling"
+      },
+      {
+        "id": "TEST-PerfS-2",
+        "description": "Load Testing",
+        "input": "Typical load",
+        "expected": "Acceptable response times"
+      },
+      {
+        "id": "TEST-PerfS-3",
+        "description": "Stress Testing",
+        "input": "Extreme load",
+        "expected": "Stable until breaking point"
+      },
+      {
+        "id": "TEST-PerfS-4",
+        "description": "Spike Testing",
+        "input": "Sudden spikes",
+        "expected": "Quick recovery"
+      },
+      {
+        "id": "TEST-PerfS-5",
+        "description": "Volume Testing",
+        "input": "Large data volumes",
+        "expected": "Efficient processing"
+      },
+      {
+        "id": "TEST-PerfS-6",
+        "description": "Endurance Testing",
+        "input": "Sustained load",
+        "expected": "No degradation"
+      }
+    ],
+    "Automated Security Testing": [
+      {
+        "id": "TEST-SecA-1",
+        "description": "Vulnerability Assessment",
+        "input": "N/A",
+        "expected": "Identify vulnerabilities"
+      },
+      {
+        "id": "TEST-SecA-2",
+        "description": "Penetration Testing",
+        "input": "N/A",
+        "expected": "Exploit weaknesses"
+      },
+      {
+        "id": "TEST-SecA-3",
+        "description": "Cross-Site Scripting",
+        "input": "Malicious scripts",
+        "expected": "Mitigate XSS"
+      }
+    ],
+    "Mobile Manual Testing": [
+      {
+        "id": "TEST-MobM-1",
+        "description": "Test app installation",
+        "input": "Install/uninstall",
+        "expected": "Successful install/uninstall"
+      },
+      {
+        "id": "TEST-MobM-2",
+        "description": "Validate login",
+        "input": "Valid/invalid credentials",
+        "expected": "Correct login behavior"
+      },
+      {
+        "id": "TEST-MobM-3",
+        "description": "Check navigation paths",
+        "input": "Navigate menus",
+        "expected": "All paths accessible"
+      },
+      {
+        "id": "TEST-MobM-4",
+        "description": "Validate input fields",
+        "input": "Incorrect/empty inputs",
+        "expected": "No crashes"
+      },
+      {
+        "id": "TEST-MobM-5",
+        "description": "Verify push notifications",
+        "input": "Trigger notifications",
+        "expected": "Notifications received"
+      },
+      {
+        "id": "TEST-MobM-6",
+        "description": "Test responsiveness",
+        "input": "Navigate screens",
+        "expected": "Minimal lag"
+      },
+      {
+        "id": "TEST-MobM-7",
+        "description": "Verify navigation ease",
+        "input": "Use menus",
+        "expected": "Easy access"
+      },
+      {
+        "id": "TEST-MobM-8",
+        "description": "Check UI consistency",
+        "input": "Inspect design",
+        "expected": "Uniform layout"
+      },
+      {
+        "id": "TEST-MobM-9",
+        "description": "Validate accessibility",
+        "input": "Use screen readers",
+        "expected": "Accessible features"
+      },
+      {
+        "id": "TEST-MobM-10",
+        "description": "Network speed handling",
+        "input": "Switch networks",
+        "expected": "Seamless performance"
+      },
+      {
+        "id": "TEST-MobM-11",
+        "description": "Verify secure login",
+        "input": "Enter credentials",
+        "expected": "Secure connection"
+      },
+      {
+        "id": "TEST-MobM-12",
+        "description": "Test portrait/landscape",
+        "input": "Rotate device",
+        "expected": "Functional in both modes"
+      }
+    ],
+    "Mobile Automated Testing": [
+      {
+        "id": "TEST-MobA-1",
+        "description": "Robo Testing",
+        "input": "Automate navigation",
+        "expected": "Complete within time"
+      },
+      {
+        "id": "TEST-MobA-2",
+        "description": "Time to Initial Display",
+        "input": "Measure startup",
+        "expected": "Within 5s"
+      },
+      {
+        "id": "TEST-MobA-3",
+        "description": "CPU Usage",
+        "input": "Measure CPU",
+        "expected": "Stable and low"
+      },
+      {
+        "id": "TEST-MobA-4",
+        "description": "RAM Usage",
+        "input": "Measure RAM",
+        "expected": "Within limits"
+      },
+      {
+        "id": "TEST-MobA-5",
+        "description": "Accessibility Testing",
+        "input": "Check compliance",
+        "expected": "No issues"
+      },
+      {
+        "id": "TEST-MobA-6",
+        "description": "Authentication Security",
+        "input": "Test MFA",
+        "expected": "No unauthorized access"
+      },
+      {
+        "id": "TEST-MobA-7",
+        "description": "Data Transmission Security",
+        "input": "Test encryption",
+        "expected": "No leaks"
+      },
+      {
+        "id": "TEST-MobA-8",
+        "description": "Vulnerability Scanning",
+        "input": "Use MobSF",
+        "expected": "No high-severity issues"
+      },
+      {
+        "id": "TEST-MobA-9",
+        "description": "Secrets Management",
+        "input": "Review code",
+        "expected": "No exposed credentials"
+      }
+    ],
+    "Regression Testing": [
+      {
+        "id": "TEST-Reg-1",
+        "description": "Requirement business Test",
+        "input": "Revise expectations",
+        "expected": "Satisfy business domain"
+      },
+      {
+        "id": "TEST-Reg-2",
+        "description": "Database Updates",
+        "input": "Schema changes",
+        "expected": "Data remains intact"
+      },
+      {
+        "id": "TEST-Reg-3",
+        "description": "UI Element Changes",
+        "input": "UI updates",
+        "expected": "Consistent UI"
+      },
+      {
+        "id": "TEST-Reg-4",
+        "description": "Integration Points",
+        "input": "API/third-party updates",
+        "expected": "Correct interaction"
+      },
+      {
+        "id": "TEST-Reg-5",
+        "description": "Performance Regression",
+        "input": "New code",
+        "expected": "Acceptable performance"
+      },
+      {
+        "id": "TEST-Reg-6",
+        "description": "Error Handling",
+        "input": "Introduce errors",
+        "expected": "Effective handling"
+      }
+    ],
+    "User Acceptance Testing": [
+      {
+        "id": "TEST-UAT-1",
+        "description": "End-to-End Testing by End Users",
+        "input": "User testing",
+        "expected": "Approval of functionality"
+      },
+      {
+        "id": "TEST-UAT-2",
+        "description": "Business Process Test",
+        "input": "Execute processes",
+        "expected": "Alignment with requirements"
+      },
+      {
+        "id": "TEST-UAT-3",
+        "description": "Alpha Testing",
+        "input": "Internal testing",
+        "expected": "Verify features"
+      },
+      {
+        "id": "TEST-UAT-4",
+        "description": "Beta Testing",
+        "input": "Limited release",
+        "expected": "Gather feedback"
+      },
+      {
+        "id": "TEST-UAT-5",
+        "description": "User Feedback Analysis",
+        "input": "Analyze feedback",
+        "expected": "Incorporate feedback"
+      }
+    ]
+  }
+}
