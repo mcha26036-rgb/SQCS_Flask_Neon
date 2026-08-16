@@ -25,7 +25,12 @@ class Config:
         'pool_pre_ping': True,
         'pool_recycle': 300,
     }
-    MAX_CONTENT_LENGTH = int(float(os.getenv('MAX_CONTENT_MB', '12')) * 1024 * 1024)
+    _max_content_mb_raw = (os.getenv('MAX_CONTENT_MB') or '12').strip() or '12'
+    try:
+        _max_content_mb = float(_max_content_mb_raw)
+    except ValueError:
+        _max_content_mb = 12.0
+    MAX_CONTENT_LENGTH = int(_max_content_mb * 1024 * 1024)
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SAMESITE = 'Lax'
     SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE', 'false').lower() == 'true'
