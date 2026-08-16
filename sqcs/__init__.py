@@ -14,7 +14,13 @@ def create_app():
     app.register_blueprint(bp)
     with app.app_context():
         from pathlib import Path
-        Path(app.instance_path).mkdir(parents=True, exist_ok=True)
+        try:
+            Path(app.instance_path).mkdir(parents=True, exist_ok=True)
+        except OSError:
+            # Read-only filesystem (e.g. Vercel serverless). Only needed
+            # for the local SQLite fallback; safe to skip when a real
+            # DATABASE_URL (Neon/Postgres) is configured.
+            pass
         db.create_all()
         seed_templates()
         ensure_admin()
