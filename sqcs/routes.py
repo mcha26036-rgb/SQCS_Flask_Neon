@@ -320,6 +320,9 @@ def about():
 
 @bp.get('/health')
 def health():
+    if not current_app.config.get('DB_CONFIGURED'):
+        from .config import DB_CONFIG_ERROR
+        return jsonify(status='degraded', database='not_configured', detail=DB_CONFIG_ERROR), 503
     try:
         db.session.execute(db.text('SELECT 1'))
         return jsonify(status='ok', database='connected')
@@ -329,4 +332,4 @@ def health():
 
 @bp.get('/setup-status')
 def setup_status():
-    return jsonify(database_url_configured=bool(current_app.config.get('SQLALCHEMY_DATABASE_URI')))
+    return jsonify(database_url_configured=bool(current_app.config.get('DB_CONFIGURED')))
