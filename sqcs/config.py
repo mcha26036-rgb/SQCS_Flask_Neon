@@ -12,14 +12,40 @@ DB_CONFIG_ERROR = (
 )
 
 
+def _env(name: str, default: str = "") -> str:
+    """
+    os.getenv(name, default) only falls back to `default` when the var
+    is completely unset. A var set to "" (blank -- easy to do by
+    accident in a dashboard's env var UI) still comes back as "" and
+    silently skips the default. That's exactly what took down every
+    route here: MAX_CONTENT_MB="" made float("") raise at import time.
+    This treats unset AND blank/whitespace-only the same way.
+    """
+    val = os.getenv(name)
+    if val is None or val.strip() == "":
+        return default
+    return val.strip()
+
+
+def _env_float(name: str, default: float) -> float:
+    raw = _env(name)
+    if not raw:
+        return default
+    try:
+        return float(raw)
+    except ValueError:
+        # Malformed value (e.g. "12mb" instead of "12") -- never let a
+        # bad env var take the whole app down. Fall back and move on.
+        return default
+
+
 def _raw_database_url() -> str:
     return (
-        os.getenv("DATABASE_URL")
-        or os.getenv("DATABASE_URL_POSTGRES_URL")
-        or os.getenv("POSTGRES_URL")
-        or os.getenv("POSTGRES_PRISMA_URL")
-        or ""
-    ).strip()
+        _env("DATABASE_URL")
+        or _env("DATABASE_URL_POSTGRES_URL")
+        or _env("POSTGRES_URL")
+        or _env("POSTGRES_PRISMA_URL")
+    )
 
 
 def _normalize(url: str) -> str:
@@ -45,7 +71,7 @@ def database_url():
     url = _normalize(_raw_database_url())
     if url:
         return url, True
-    if os.getenv("VERCEL"):
+    if _env("VERCEL"):
         # No Postgres URL on Vercel: don't fall back to SQLite (it's
         # ephemeral/read-only there), and don't raise. The app will
         # boot in a degraded state; DB-dependent routes return a
@@ -56,7 +82,7 @@ def database_url():
 
 
 class Config:
-    SECRET_KEY = os.getenv("SECRET_KEY", "dev-only-change-me")
+    SECRET_KEY = _env("SECRET_KEY", "dev-only-change-me")
 
     _resolved_url, DB_CONFIGURED = database_url()
     # When no real DB is configured, point SQLAlchemy at a harmless
@@ -71,14 +97,11 @@ class Config:
         "pool_recycle": 300,
     }
 
-    MAX_CONTENT_LENGTH = int(
-        float(os.getenv("MAX_CONTENT_MB", "12")) * 1024 * 1024
-    )
+    MAX_CONTENT_LENGTH = int(_env_float("MAX_CONTENT_MB", 12.0) * 1024 * 1024)
 
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SAMESITE = "Lax"
-    SESSION_COOKIE_SECURE = (
-        os.getenv("SESSION_COOKIE_SECURE", "false").lower() == "true"
-    )
+    SESSION_COOKIE_SECURE = _env("SESSION_COOKIE_SECURE", "false").lower() == "true"
 
     REMEMBER_COOKIE_HTTPONLY = True
+
