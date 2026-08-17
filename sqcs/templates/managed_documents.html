@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Reports / SRS / SAD{% endblock %}
+{% block crumb %}Reports / SRS / SAD{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div><div class="eyebrow">CONTROLLED DOCUMENTS</div>
+  <h1>Reports / SRS / SAD</h1>
+  <p>Create, edit, update, print or download exactly the document you select.</p></div>
+</div>
+
+<div class="layout-2">
+<section class="panel">
+  <div class="panel-head"><div><h2>Documents</h2><p>{{ documents|length }} selected documents.</p></div></div>
+  <div class="doc-grid">
+  {% for d in documents %}
+    <article class="doc-card">
+      <div class="doc-icon">{{ d.doc_type }}</div>
+      <div class="doc-body">
+        <h3>{{ d.title }}</h3>
+        <span class="badge">{{ d.doc_type }}</span>
+        <p>{{ d.description or "No description." }}</p>
+        <div class="doc-foot">
+          <span>{{ d.updated_at.strftime("%Y-%m-%d %H:%M") }}</span>
+          <div class="action-strip">
+            <a class="btn btn-small btn-ghost" href="{{ url_for('managed_docs.specific_print', doc_id=d.id) }}" target="_blank">🖨️ Print Specific</a>
+            <a class="btn btn-small btn-ghost" href="{{ url_for('managed_docs.specific_html', doc_id=d.id) }}">⬇️ Specific HTML</a>
+            <a class="btn btn-small btn-ghost" href="{{ url_for('managed_docs.edit', doc_id=d.id) }}">✏️ Edit / Update</a>
+            <form method="post" action="{{ url_for('managed_docs.delete', doc_id=d.id) }}" class="inline" onsubmit="return confirm('Delete this document?')">
+              <input type="hidden" name="_csrf" value="{{ csrf_token }}"><button class="btn btn-small btn-danger">🗑️ Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </article>
+  {% else %}
+    <div class="empty-state"><h3>No managed documents yet.</h3><p>Create an SRS, SAD or Report.</p></div>
+  {% endfor %}
+  </div>
+</section>
+
+<aside class="panel">
+  <div class="panel-head"><div><h2>Create New</h2><p>Content is stored in Neon PostgreSQL.</p></div></div>
+  <form method="post" action="{{ url_for('managed_docs.create') }}">
+    <input type="hidden" name="_csrf" value="{{ csrf_token }}">
+    <label>Project<select name="project_id"><option value="">No project</option>{% for p in projects %}<option value="{{ p.id }}" {% if selected_project==p.id %}selected{% endif %}>{{ p.name }}</option>{% endfor %}</select></label>
+    <label>Type<select name="doc_type">{% for t in doc_types %}<option>{{ t }}</option>{% endfor %}</select></label>
+    <label>Title<input name="title" required></label>
+    <label>Description<textarea name="description" rows="3"></textarea></label>
+    <label>HTML content<textarea name="content" rows="12" placeholder="<h2>Section</h2><p>Content...</p>"></textarea></label>
+    <button class="btn btn-primary btn-xl">➕ Create</button>
+  </form>
+</aside>
+</div>
+{% endblock %}
