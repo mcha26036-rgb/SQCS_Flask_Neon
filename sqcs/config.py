@@ -313,11 +313,17 @@ class Config:
     #
     # The application request guard is responsible for preventing
     # database-dependent requests when DB_CONFIGURED is False.
-    SQLALCHEMY_DATABASE_URI = (
-        _resolved_url
-        if _resolved_url
-        else "sqlite://"
-    )
+    if _resolved_url:
+        SQLALCHEMY_DATABASE_URI = _resolved_url
+    elif _is_vercel():
+        # Never instantiate SQLite on Vercel. This unreachable placeholder
+        # only satisfies Flask-SQLAlchemy initialization; every protected
+        # request is blocked by create_app() when DB_CONFIGURED is False.
+        SQLALCHEMY_DATABASE_URI = (
+            "postgresql+psycopg://disabled:disabled@127.0.0.1:5432/disabled"
+        )
+    else:
+        SQLALCHEMY_DATABASE_URI = f"sqlite:///{BASE_DIR / 'instance' / 'sqcs.db'}"
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -369,7 +375,7 @@ class Config:
     SESSION_COOKIE_SECURE = (
         _env(
             "SESSION_COOKIE_SECURE",
-            "false",
+            "true" if _is_vercel() else "false",
         ).lower()
         == "true"
     )
@@ -385,7 +391,7 @@ class Config:
     REMEMBER_COOKIE_SECURE = (
         _env(
             "REMEMBER_COOKIE_SECURE",
-            "false",
+            "true" if _is_vercel() else "false",
         ).lower()
         == "true"
     )
