@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Edit {{ doc.title }}{% endblock %}
+{% block crumb %}Edit {{ doc.doc_type }}{% endblock %}
+{% block content %}
+<div class="page-heading"><div><div class="eyebrow">{{ doc.doc_type }}</div><h1>Edit document</h1></div></div>
+<section class="panel">
+<form method="post">
+<input type="hidden" name="_csrf" value="{{ csrf_token }}">
+<label>Project<select name="project_id" disabled><option>{{ doc.project_id or "No project" }}</option></select></label>
+<label>Type<select name="doc_type">{% for t in doc_types %}<option {% if doc.doc_type==t %}selected{% endif %}>{{ t }}</option>{% endfor %}</select></label>
+<label>Title<input name="title" value="{{ doc.title }}" required></label>
+<label>Description<textarea name="description" rows="3">{{ doc.description }}</textarea></label>
+<label>HTML content<textarea name="content" rows="20">{{ doc.content }}</textarea></label>
+<div class="action-strip"><button class="btn btn-primary">🔄 Update</button><a class="btn btn-ghost" href="{{ url_for('managed_docs.index', project_id=doc.project_id) }}">Cancel</a></div>
+</form>
+</section>
+{% endblock %}
