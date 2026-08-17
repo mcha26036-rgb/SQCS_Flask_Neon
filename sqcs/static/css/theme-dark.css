@@ -1,0 +1,123 @@
+/* Dark theme. Toggled via [data-theme="dark"] on <html>, set by theme.js
+   (persisted to localStorage, defaults to prefers-color-scheme). */
+
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --panel: #131c2e;
+  --ink: #e6ecf7;
+  --muted: #93a1bc;
+  --line: #253251;
+  --blue: #5b8def;
+  --blue2: #3f6fd1;
+  --navy: #0b1220;
+  --green: #34c281;
+  --amber: #e0a13d;
+  --red: #ef6b74;
+  --shadow: 0 14px 38px rgba(0, 0, 0, .45);
+
+  --surface-2: #182338;   /* subtler panels: subsection-head, section-link hover */
+  --surface-3: #1b2740;   /* input fields, badges base */
+  --hover: #182338;
+  --border-soft: #2c3a5c;
+}
+
+/* Sidebar keeps its own dark navy gradient in both themes; no change needed. */
+
+[data-theme="dark"] .icon-btn,
+[data-theme="dark"] .metric,
+[data-theme="dark"] .panel,
+[data-theme="dark"] .subsection,
+[data-theme="dark"] .response-btn,
+[data-theme="dark"] .report-sheet,
+[data-theme="dark"] .report-summary > div,
+[data-theme="dark"] .auth-card,
+[data-theme="dark"] .btn-ghost,
+[data-theme="dark"] .form-grid input,
+[data-theme="dark"] .form-grid select,
+[data-theme="dark"] .form-grid textarea,
+[data-theme="dark"] .filter-row input,
+[data-theme="dark"] .filter-row select,
+[data-theme="dark"] .template-editor textarea,
+[data-theme="dark"] table select {
+  background: var(--panel);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+[data-theme="dark"] .metric.emphasis {
+  background: linear-gradient(135deg, #16233e, var(--panel));
+}
+
+[data-theme="dark"] .topbar {
+  background: rgba(11, 18, 32, .85);
+  border-bottom-color: var(--line);
+}
+
+[data-theme="dark"] .sticky-save {
+  background: rgba(19, 28, 46, .92);
+  border-color: var(--line);
+}
+
+[data-theme="dark"] .subsection-head,
+[data-theme="dark"] .section-link > span {
+  background: var(--surface-2);
+}
+
+[data-theme="dark"] tr.click-row:hover,
+[data-theme="dark"] .section-link:hover,
+[data-theme="dark"] .section-link.active {
+  background: var(--hover);
+}
+
+[data-theme="dark"] .doc-icon,
+[data-theme="dark"] .item-id {
+  background: #1c2a4a;
+  color: #a9c2f5;
+}
+
+[data-theme="dark"] .empty-icon,
+[data-theme="dark"] .mini-callout,
+[data-theme="dark"] .dropzone {
+  background: var(--surface-3);
+}
+
+[data-theme="dark"] .dropzone {
+  border-color: var(--border-soft);
+}
+
+[data-theme="dark"] .response-btn.selected {
+  background: #1c2f57;
+  border-color: var(--blue);
+  color: #bcd2fb;
+}
+
+[data-theme="dark"] .btn-danger {
+  background: #351d22;
+  border-color: #5a2b32;
+  color: var(--red);
+}
+
+[data-theme="dark"] .status-planning { background: #1c2b4d; color: #9db9f2; }
+[data-theme="dark"] .status-in-progress { background: #123246; color: #7fc4ef; }
+[data-theme="dark"] .status-review { background: #3a2c0e; color: #e6b25c; }
+[data-theme="dark"] .status-completed,
+[data-theme="dark"] .badge.success { background: #133427; color: #5fd39b; }
+[data-theme="dark"] .status-on-hold,
+[data-theme="dark"] .badge.danger { background: #3a1c20; color: #f0868d; }
+[data-theme="dark"] .badge { background: var(--surface-3); color: var(--muted); }
+
+[data-theme="dark"] .flash.success { background: #133427; color: #5fd39b; }
+[data-theme="dark"] .flash.danger { background: #3a1c20; color: #f0868d; }
+[data-theme="dark"] .flash.warning { background: #3a2c0e; color: #e6b25c; }
+
+[data-theme="dark"] .auth-page {
+  background:
+    radial-gradient(circle at 80% 20%, #16233e, transparent 33%),
+    linear-gradient(135deg, #0b1220, #0d1626);
+}
+
+[data-theme="dark"] .brand img,
+[data-theme="dark"] .auth-brand img {
+  background: #fff; /* logo has a light background baked in; keep it on a white chip */
+}
+
